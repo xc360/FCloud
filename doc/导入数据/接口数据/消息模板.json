@@ -1,0 +1,162 @@
+[
+  {
+    "name": "手机验证码-登录",
+    "code": "phone_login",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_207520902",
+    "template": null,
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "手机验证码-注册",
+    "code": "phone_register",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_207520901",
+    "template": null,
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "手机验证码-找回密码",
+    "code": "phone_forget_password",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_207520903",
+    "template": null,
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "手机验证码-修改手机号",
+    "code": "phone_update",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_227900030",
+    "template": null,
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "手机验证码-注销",
+    "code": "phone_unsubscribe",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_207520904",
+    "template": null,
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-登录",
+    "code": "email_login",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\n        您好！你正在使用本系统的邮箱登录功能，本次请求的验证码为：\n    </p>\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\n        <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b>\n    </p>\n    <p\n            style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\">\n        (为了保障您帐号的安全性，请在5分钟内完成验证。)</p>\n</div>",
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-注册",
+    "code": "email_register",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\n        您好！你正在使用本系统的邮箱注册功能，本次请求的验证码为：\n    </p>\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\n        <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b>\n    </p>\n    <p\n            style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\">\n        (为了保障您帐号的安全性，请在5分钟内完成验证。)</p>\n</div>",
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-找回密码",
+    "code": "email_forget_password",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\n        您好！你正在使用本系统的邮箱找回密码功能，本次请求的验证码为：\n    </p>\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\n        <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b>\n    </p>\n    <p\n            style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\">\n        (为了保障您帐号的安全性，请在5分钟内完成验证。)</p>\n</div>",
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-修改邮箱",
+    "code": "email_update",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\r\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\r\n        您好！你正在使用本系统的绑定邮箱功能，本次请求的验证码为：\r\n    </p>\r\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\r\n        <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b>\r\n    </p>\r\n    <p\r\n            style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\">\r\n        (为了保障您帐号的安全性，请在5分钟内完成验证。)</p>\r\n</div>",
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-注销",
+    "code": "email_unsubscribe",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\"> <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\"> 您好！你正在使用本系统的注销账户功能，本次请求的验证码为： </p> <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\"> <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b> </p> <p style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\"> (为了保障您帐号的安全性，请在5分钟内完成验证。)</p> </div>\t",
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-验证邮箱修改手机号",
+    "code": "email_update_phone",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\r\n  <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\r\n    您好！你正在使用本系统的修改手机号功能，本次请求的验证码为：\r\n  </p>\r\n  <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\r\n    <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b>\r\n  </p>\r\n  <p\r\n    style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\">\r\n    (为了保障您帐号的安全性，请在5分钟内完成验证。)</p>\r\n</div>",
+    "otherConfig": null,
+    "status": "0"
+  },
+  {
+    "name": "邮箱验证码-验证邮箱修改邮箱",
+    "code": "email_update_email",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\r\n  <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\r\n    您好！你正在使用本系统的修改邮箱功能，本次请求的验证码为：\r\n  </p>\r\n  <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#333;font-family:'宋体',arial,sans-serif\">\r\n    <b style=\"font-size:18px;color:#f90\" th:text=\"${code}\"></b>\r\n  </p>\r\n  <p\r\n    style=\"margin:0px 0px 0px 10px;padding:0;line-height:30px;font-size:14px;color:#979797;font-family:'宋体',arial,sans-serif\">\r\n    (为了保障您帐号的安全性，请在5分钟内完成验证。)</p>\r\n</div>",
+    "otherConfig": null,
+    "status": "0"
+  },
+  {
+    "name": "手机验证码-修改手机号确认",
+    "code": "phone_update_phone",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_207530983",
+    "template": null,
+    "otherConfig": null,
+    "status": "0"
+  },
+  {
+    "name": "手机验证码-修改邮箱确认",
+    "code": "phone_update_email",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_227900031",
+    "template": null,
+    "otherConfig": null,
+    "status": "0"
+  },
+  {
+    "name": "系统异常通知-邮件",
+    "code": "email_exception_notice",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "qq_mail",
+    "templateCode": null,
+    "template": "<div style=\"width:100%;text-align: center\">\n    <p style=\"margin:0;padding:0;line-height:30px;font-size:14px;color:#33363C;\">\n        <span style=\"color: #09A183;\" th:text=\"${message}\"></span>\n    </p>\n</div>",
+    "otherConfig": "",
+    "status": "0"
+  },
+  {
+    "name": "系统异常通知-手机",
+    "code": "phone_exception_notice",
+    "signName": "捷腾信息",
+    "apiSupplierCode": "ali_sms",
+    "templateCode": "SMS_462090125",
+    "template": null,
+    "otherConfig": null,
+    "status": "0"
+  }
+]

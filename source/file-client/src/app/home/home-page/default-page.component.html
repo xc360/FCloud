@@ -1,0 +1,40 @@
+<div>
+  <!--网盘信息-->
+  <div class="screen-show-content">
+    <div class="screen-show-block network-disk">
+      <div class="monitor-block-title">网盘信息：</div>
+      <div class="monitor-block-content">
+        <div class="network-disk-progress-ball">
+          <app-progress-ball
+            [config]="{size: 0, progress:70,
+              showValue: userDiskInfo.cloudSpace.value,
+              unit: userDiskInfo.cloudSpace.unit,
+              fontSize:-12,
+              waterColor: '#1875F0',fontColor: '#FFFFFF',backgroundColor:'#323335'}">
+          </app-progress-ball>
+          <span class="text">网盘空间</span>
+        </div>
+        <div class="network-disk-progress-ball">
+          <app-progress-ball
+            [config]="{size:0, progress: 70,
+              showValue: userDiskInfo.useSpace.value,
+              unit: userDiskInfo.useSpace.unit,
+              fontSize:-12,
+              waterColor: '#5553CE', fontColor: '#FFFFFF',backgroundColor:'#323335'}">
+          </app-progress-ball>
+          <span class="text">已使用空间</span>
+        </div>
+        <div class="network-disk-progress-ball" *ngIf="BUTTON_CODE.b_show_free_flow|BAuthority">
+          <app-progress-ball
+            [config]="{size:0, progress: 70,
+              showValue: userDiskInfo.freeFlow.value,
+              unit: userDiskInfo.freeFlow.unit,
+              fontSize:-12,
+              waterColor: '#50D166', fontColor: '#FFFFFF',backgroundColor:'#323335'}">
+          </app-progress-ball>
+          <span class="text">cdn流量</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

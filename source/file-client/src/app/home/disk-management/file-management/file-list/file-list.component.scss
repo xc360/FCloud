@@ -1,0 +1,188 @@
+.file-all {
+  height: 100%;
+
+  .head {
+    text-align: left;
+
+    button {
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 108px;
+
+      i {
+        width: 8px;
+      }
+    }
+  }
+
+  .label {
+    margin-left: 12px;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .content {
+    margin: 8px;
+    height: 100%;
+
+    .th-td-1 {
+      width: 62px;
+      min-width: 62px;
+      font-size: 24px;
+      text-align: left;
+
+      i {
+        float: right;
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+    }
+
+    .th-td-2 {
+      min-width: 57px;
+      text-align: center;
+
+      .play {
+        margin-left: 5px;
+        display: inline-block
+      }
+    }
+
+    .th-td-3 {
+      min-width: 87px;
+      text-align: center;
+    }
+
+    .th-td-4 {
+      min-width: 92px;
+      text-align: center;
+    }
+
+    .th-td-5 {
+      overflow: hidden;
+      min-width: 64px;
+    }
+
+
+    .thead-tr {
+      height: 36px;
+      background-color: #001529;
+
+      th {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.select-folder-modal, .upload-file-modal {
+  overflow-y: auto;
+  min-height: 320px;
+  max-height: 320px;
+}
+
+:host ::ng-deep .ant-table-body {
+  margin: 0px !important;
+}
+
+
+.footer {
+
+  .footer-head {
+    margin: 10px;
+  }
+
+  .footer-content {
+    overflow: auto;
+    animation: slide 20s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    @keyframes slide {
+      0% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: -50%;
+      }
+
+      100% {
+        margin-left: -100%;
+      }
+    }
+
+    .footer-content__play {
+      white-space: nowrap;
+      width: fit-content;
+    }
+  }
+
+  .footer-content::-webkit-scrollbar {
+    display: none
+  }
+}
+
+.recommend-element {
+  width: 240px;
+  height: 180px;
+  padding: 0 2px;
+}
+
+.second-pass {
+  display: none;
+  margin-top: 2px;
+  vertical-align: top;
+  margin-left: 5px;
+
+  .icon {
+    color: #5CDA93
+  }
+}
+
+.video-play {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(50, 50, 50, 0.5);
+  text-align: center;
+  padding: 6.1% 0;
+  z-index: 1000;
+
+  .video {
+    width: 1200px;
+    height: 600px;
+    display: inline-block
+  }
+}
+
+
+@media (max-width: 636px) {
+
+  .video-play {
+    padding: 5vh 0;
+
+    .video {
+      width: 360px;
+      display: inline-block
+    }
+  }
+  .th-td-4 {
+    display: none;
+  }
+
+  .th-td-5 {
+    white-space: nowrap;
+    max-width: 115px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .recommend-element {
+    width: 150px;
+    height: 120px;
+  }
+
+}

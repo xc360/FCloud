@@ -1,0 +1,22 @@
+[
+  "getOpenApp",
+  "getOpenUserGroupList",
+  "getOpenInfoList",
+  "getOpenDictList",
+  "getOpenAuthorityList",
+  "getOpenToken",
+  "deleteOpenToken",
+  "updateOpenToken",
+  "getOpenUser",
+  "updateOpenUserPassword",
+  "createOpenUserCaptcha",
+  "getOpenUserCaptcha",
+  "createOpenCaptcha",
+  "updateOpenUserPhone",
+  "updateOpenUserMail",
+  "deleteOpenUser",
+  "getOpenUserList",
+  "getOpenImgCaptcha",
+  "updateOpenAppTokenAuthority",
+  "getOpenDeletedUserList"
+]

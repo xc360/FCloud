@@ -1,0 +1,145 @@
+<div class="file-all" id="upload-file">
+  <app-list-find [tableFindModel]="tableFindModel"></app-list-find>
+  <div class='footer'>
+    <div class='footer-head'>{{folderLength}} 文件夹 和 {{fileLength}}个文件</div>
+    <div class='footer-content'>
+      <div class='footer-content__play'>
+        <ng-container *ngFor="let item of recommendMovie">
+          <img class='recommend-element' [src]="item.name" alt="加载失败" (click)="playMovie(item.value)"/>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <!--  创建目录-->
+  <app-create-folder #createFolder (createSuccess)="createFolderOk()"></app-create-folder>
+  <!--  创建目录-->
+  <app-create-folder #createFolder1 (createSuccess)="createFolderOk1()"></app-create-folder>
+  <!--  修改名称-->
+  <nz-modal [(nzVisible)]="edit.isVisible" nzTitle="编辑" (nzOnCancel)="edit.isVisible = false"
+            (nzAfterOpen)="modalOpen('editFolderName')"
+            (nzOnOk)="updateFileFolder(edit)"
+            [nzOkDisabled]="verifyInput(edit,'name')||appService.getLoading()">
+    <nz-form-item>
+      <nz-form-label nzRequired>名称</nz-form-label>
+      <nz-form-control nzErrorTip='名称，不能包含：/\:*?"<>|' [nzValidateStatus]="edit.nameStatus">
+        <input #editFolderName [maxLength]="60" nz-input placeholder="请输入" [(ngModel)]="edit.name"
+               autofocus="autofocus"/>
+      </nz-form-control>
+    </nz-form-item>
+  </nz-modal>
+  <!--  分享-->
+  <nz-modal [(nzVisible)]="share.isVisible" nzTitle="分享" (nzOnCancel)="fileShareCancel()"
+            (nzOnOk)="fileShare()"
+            (nzAfterOpen)="modalOpen('shareRemark')"
+            [nzOkDisabled]="share.okDisabled||appService.getLoading()">
+    <nz-form-item>
+      <nz-form-label nzRequired>提取码</nz-form-label>
+      <nz-form-control nzErrorTip='提取码' [nzValidateStatus]="commonTool.notNull(share.needCode)?'':'error'">
+        <nz-select nzShowSearch nzAllowClear
+                   nzPlaceHolder="请选择"
+                   [(ngModel)]="share.needCode" style="width:100%"
+                   (ngModelChange)="
+                   commonTool.notNull(share.validTime)&&
+                   commonTool.notNull(share.needCode)?
+                   share.okDisabled=false:share.okDisabled=true">
+          <nz-option nzLabel="需要" nzValue="0"></nz-option>
+          <nz-option nzLabel="不需要" nzValue="1"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>有效期</nz-form-label>
+      <nz-form-control nzErrorTip='文件类型不能为空' [nzValidateStatus]="commonTool.notNull(share.validTime)?'':'error'">
+        <nz-select nzShowSearch nzAllowClear
+                   nzPlaceHolder="请选择"
+                   [(ngModel)]="share.validTime" style="width:100%"
+                   (ngModelChange)="
+                   commonTool.notNull(share.validTime)&&
+                   commonTool.notNull(share.needCode)?
+                   share.okDisabled=false:share.okDisabled=true">
+          <nz-option nzLabel="永久有效" nzValue="0"></nz-option>
+          <nz-option nzLabel="一天" nzValue="86400000"></nz-option>
+          <nz-option nzLabel="七天" nzValue="604800000"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>备注</nz-form-label>
+      <nz-form-control>
+        <textarea #shareRemark [maxLength]="200" rows="4" nz-input [(ngModel)]="share.remark"
+                  autofocus="autofocus"></textarea>
+      </nz-form-control>
+    </nz-form-item>
+  </nz-modal>
+  <!--  url地址-->
+  <nz-modal [(nzVisible)]="shareUrl.isVisible" nzTitle="下载地址"
+            (nzOnCancel)="shareUrl.isVisible = false"
+            nzOkText="复制"
+            (nzOnOk)="shareUrl.isVisible = false;copy(shareUrl.url+(shareUrl.drawCode?'提取码:'+shareUrl.drawCode:''))">
+    <span>地址：</span><a>{{shareUrl.url}}</a>
+    <br/>
+    <ng-container *ngIf="shareUrl.drawCode">
+      <span>提取码：</span><a>{{shareUrl.drawCode}}</a>
+    </ng-container>
+  </nz-modal>
+  <!--  cdn地址-->
+  <nz-modal [(nzVisible)]="cdn.isVisible" nzTitle="下载地址"
+            (nzOnCancel)="cdn.isVisible = false"
+            nzOkText="复制"
+            (nzOnOk)="cdn.isVisible = false;copy(cdn.url)">
+    <span>地址：</span><a>{{cdn.url}}</a>
+  </nz-modal>
+  <!--  音乐播放器-->
+  <nz-modal [(nzVisible)]="showMusicPlay" nzTitle="音乐播放器"
+            [nzBodyStyle]="{padding:'10px'}"
+            (nzOnCancel)="showMusicPlay = false"
+            [nzMaskClosable]="false"
+            [nzCancelText]="null"
+            (nzOnOk)="showMusicPlay = false;musicPlayerComponent.stop(false)"
+            nzOkText="关闭">
+    <app-music-player></app-music-player>
+  </nz-modal>
+  <!--  图片-->
+  <div id="image" style="display: none"></div>
+  <!--  视频-->
+  <div class='video-play' *ngIf="videoPlay.isVisible" (click)='videoPlay.isVisible = false'>
+    <video src="{{videoPlay.url}}" autoplay controls="controls" class="video" id='videoPlayer'>
+      您的浏览器不支持 video 标签。
+    </video>
+  </div>
+  <!-- 选择目录-->
+  <nz-modal [(nzVisible)]="selectFolder.isVisible" nzTitle="选择目录"
+            (nzOnCancel)="selectFolder.isVisible = false;"
+            [nzBodyStyle]="{paddingTop:'0px',padding:'5px'}"
+            (nzOnOk)="copyMoveFolderFile()" [nzOkText]="selectFolder.okText"
+            [nzOkDisabled]="appService.getLoading()">
+    <div class="select-folder-modal">
+      <app-list-find [tableFindModel]="tableFindModel1"></app-list-find>
+    </div>
+  </nz-modal>
+  <!-- 上传文件-->
+  <nz-modal [(nzVisible)]="upload.isVisible"
+            nzTitle="上传文件{{count}}/{{tableFindModel2.dataModels.length}}"
+            [nzBodyStyle]="{paddingTop:'0px',maxHeight:'320px'}"
+            [nzWidth]="570"
+            [nzMaskClosable]="false" nzOkText="关闭"
+            (nzOnCancel)="cancelUpload()"
+            (nzOnOk)="cancelUpload()">
+    <div class="upload-file-modal" id="upload-file-modal">
+      <app-table-find [tableFindModel]="tableFindModel2"></app-table-find>
+    </div>
+  </nz-modal>
+  <!--  打包-->
+  <nz-modal [(nzVisible)]="package.isVisible" nzTitle="打包"
+            (nzOnCancel)="package.isVisible = false"
+            (nzOnOk)="packageOk(package)" [nzOkDisabled]="verifyInput(package,'name') ||appService.getLoading()">
+    <nz-form-item>
+      <nz-form-label nzRequired>文件名称(<span style="color: red">不需要后缀，默认zip</span>)</nz-form-label>
+      <nz-form-control nzErrorTip='文件名称，不能包含：/\:*?"<>|' [nzValidateStatus]="package.nameStatus">
+        <input nz-input placeholder="文件名称" [maxLength]="60" [(ngModel)]="package.name"
+               autofocus="autofocus"/>
+      </nz-form-control>
+    </nz-form-item>
+  </nz-modal>
+</div>
+

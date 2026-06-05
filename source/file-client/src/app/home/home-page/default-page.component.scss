@@ -1,0 +1,50 @@
+.screen-show-content {
+  margin: 4px 10px 4px 10px;
+  overflow: hidden;
+
+  .screen-show-block {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #252628;
+    border: 1px solid #37393C;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 7px 8px 7px 8px;
+    padding: 13px;
+
+    .monitor-block-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #FFFEFE;
+      line-height: 22px;
+    }
+
+    .monitor-block-content {
+      margin-top: 13px;
+    }
+
+  }
+
+  .network-disk {
+    width: 99%;
+
+
+    .monitor-block-content {
+      text-align: center;
+    }
+
+    .network-disk-progress-ball {
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      width: 150px;
+      margin-top: 4.5px;
+
+      .text {
+        font-size: 16px;
+        font-weight: 400;
+        color: #CCCCCC;
+      }
+    }
+  }
+}

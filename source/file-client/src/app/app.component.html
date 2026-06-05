@@ -1,0 +1,5 @@
+<nz-spin class="spin" *ngIf="appService.getLoading()" [nzSpinning]="appService.getLoading()"
+         nzSize="large" [nzTip]="appService.getDesc()">
+  <div class="main"></div>
+</nz-spin>
+<router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+<!--  创建目录-->
+<nz-modal [(nzVisible)]="createFolder.isVisible" nzTitle="创建目录"
+          (nzOnCancel)="createFolder.isVisible = false"
+          (nzOnOk)="createFolderOk()"
+          (nzAfterOpen)="modalOpen('createFolderName')"
+          [nzOkDisabled]="appService.getLoading()||verifyInput(createFolder,'name')">
+  <nz-form-item>
+    <nz-form-label nzRequired>文件夹名称</nz-form-label>
+    <nz-form-control nzErrorTip='目录名称，不能包含：/\:*?"<>|' [nzValidateStatus]="createFolder.nameStatus">
+      <label>
+        <input #createFolderName nz-input placeholder="目录名称" [maxLength]="60"
+               [(ngModel)]="createFolder.name" autofocus="autofocus"/>
+      </label>
+    </nz-form-control>
+  </nz-form-item>
+</nz-modal>

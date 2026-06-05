@@ -1,0 +1,66 @@
+<div class="safety-chain-all">
+  <app-table-find [tableFindModel]="tableFindModel"></app-table-find>
+  <!--  创建安全链接-->
+  <nz-modal [(nzVisible)]="isEditVisible" nzTitle="安全链接"
+            (nzOnCancel)="isEditVisible = false"
+            [nzOkDisabled]="!(
+            commonTool.notNull(formInfo.path.trim())&&
+            commonTool.notNull(formInfo.url.trim())&&
+            commonTool.notNull(formInfo.name.trim())&&
+            !appService.getLoading())"
+            (nzOnOk)="createOk()">
+    <nz-form-item>
+      <nz-form-label nzRequired>规则名称</nz-form-label>
+      <nz-form-control>
+        <input [maxLength]="200" nz-input placeholder="链接名称" [(ngModel)]="formInfo.name"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>文件目录</nz-form-label>
+      <nz-form-control class="select-folder">
+        <button nz-button [nzType]="'primary'" (click)="selectFolderClick()">
+          请选择
+        </button>
+        <input class="select-folder-input" [maxLength]="200" nz-input placeholder="目录名称"
+               [(ngModel)]="formInfo.path" [disabled]="true"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>链接规则</nz-form-label>
+      <nz-form-control>
+        <input [maxLength]="200" nz-input placeholder="链接" [(ngModel)]="formInfo.url"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>允许访问的后缀</nz-form-label>
+      <nz-form-control>
+        <textarea [maxLength]="5000" [rows]="4" nz-input
+                  [(ngModel)]="formInfo.allowSuffix" placeholder="允许访问的后缀">
+        </textarea>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>验证签名</nz-form-label>
+      <nz-form-control>
+        <nz-switch [(ngModel)]="formInfo.verifySign"></nz-switch>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired>状态</nz-form-label>
+      <nz-form-control>
+        <nz-switch [(ngModel)]="formInfo.status"></nz-switch>
+      </nz-form-control>
+    </nz-form-item>
+  </nz-modal>
+  <!-- 选择目录-->
+  <nz-modal [(nzVisible)]="selectFolder.isVisible" nzTitle="选择目录"
+            (nzOnCancel)="selectFolder.isVisible = false;"
+            [nzBodyStyle]="{paddingTop:'0px',padding:'5px'}"
+            (nzOnOk)="saveFolderFile()" [nzOkText]="selectFolder.okText">
+    <div class="select-folder-modal">
+      <app-list-find [tableFindModel]="tableFindModel1"></app-list-find>
+    </div>
+  </nz-modal>
+  <!--  创建目录-->
+  <app-create-folder (createSuccess)="createFolderOk()"></app-create-folder>
+</div>

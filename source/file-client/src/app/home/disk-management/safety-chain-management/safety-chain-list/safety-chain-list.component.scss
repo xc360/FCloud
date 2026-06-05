@@ -1,0 +1,20 @@
+.safety-chain-all {
+  height: 100%;
+}
+
+.select-folder {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .select-folder-input {
+    max-width: 396px;
+    min-width: 237px
+  }
+}
+
+.select-folder-modal {
+  min-height: 320px;
+  max-height: 385px;
+  overflow-y: auto;
+}

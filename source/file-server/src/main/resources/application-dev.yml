@@ -1,0 +1,69 @@
+server:
+  port: 8812
+  maxHttpHeaderSize: 50KB  # 大小 50KB
+
+#个人配置
+xc:
+  file:
+    machineId: f001 #机器id,分布式使用
+    folderPaths:
+      - path: C:/home/file #储存文件地址,必须配置
+        reserveSpace: 1073741824 #硬盘预留空间，单位直接，默认1GB
+    #本机的地址
+    localUrl: http://127.0.0.1:8812 #本机的新地址,项目迁移时使用
+    localOldUrl: http://127.0.0.1:8812 #本机旧的地址,项目迁移时使用
+    tempFolder:
+      path: C:/home/file/tempFile #零时文件目录
+      reserveSpace: 1073741824 #硬盘预留空间，单位直接，默认1GB
+    logServeName: file-server
+  open:
+    basic:
+      feignName: basic-server #基础服务名称，不必改
+      feignUrl: https://basic.ccxc.vip #基础服务地址，对应BCloud的地址
+      openToken: true
+      openAuthority: true #是否开启权限，true:开启，false:不开启
+      appId: xc0019616597 #登录授权的应用id，BCloud申请获取
+      appSecret: 880b76b62b0da75457c2253dc85470162635e85201a28b01 #登录授权的应用秘钥，BCloud申请获取
+    report:
+      feignName: report-server #报表服务名称，不必改
+      feignUrl: http://99xc.vip:9915 #报表服务地址
+
+#spring配置
+spring:
+  web:
+    resources:
+      static-locations: classpath:/public,classpath:/META-INF/resources/
+      cache:
+        cachecontrol:
+          no-cache: true
+  redis:
+    host: test.ccxc.vip
+    database: 2
+    port: 6379
+    password: redis_xc779943476
+  servlet:
+    multipart:
+      maxFileSize: 1000000MB
+      maxRequestSize: 1000000MB
+  datasource:
+    url: jdbc:mysql://test.ccxc.vip:3306/FCloud?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true&autoReconnect=true
+    username: root
+    password: mysql_xc779943476
+
+#swagger配置
+swagger:
+  enabled: true
+  title: 文件服务
+  description: 该平台基于我的另一个项目基础服务平台，该项目主要是针对在开发过程中文件的存储，处理，减少冗余，提升上传数据，节约磁盘空间。也可以当网盘使用。
+  version: 1.0.0
+  serviceUrl: http://127.0.0.1:8812
+
+#mybatis-plus配置
+mybatis-plus:
+  # xml扫描
+  mapper-locations: classpath:/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xc.**.entity
+  configuration: # MyBatis 配置
+    #开启日志打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

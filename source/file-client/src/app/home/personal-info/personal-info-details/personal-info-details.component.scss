@@ -1,0 +1,42 @@
+.edit-form {
+  .captcha_img {
+    margin-top: -4px;
+    margin-left: 4px;
+    width: calc(100% - 4px);
+    height: 32px;
+    border: 1px #eee solid;
+    cursor: pointer;
+  }
+
+  .captcha_button {
+    margin-left: 4px;
+    width: calc(100% - 4px);
+  }
+
+  .p1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #33363C;
+  }
+
+  .p2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #999FAA;
+  }
+
+  .p3 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #BCC1D4;
+
+    span {
+      color: #409EFF;
+      cursor: pointer
+    }
+  }
+
+}

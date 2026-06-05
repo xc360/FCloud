@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xc.file.mapper.FolderMapper">
+
+    <select id="getFolderFilePage" resultType="com.xc.file.dto.FolderFileDto">
+        (SELECT
+        t1.id,
+        t1.name,
+        t1.disk_id,
+        "1" AS is_file,
+        t1.node,
+        t1.parent_node,
+        null as size,
+        null as folder_id,
+        null as hash_id,
+        null as status,
+        t1.create_time,
+        t1.update_time
+        FROM xc_folder as t1
+        <if test="obj.shareId!=null and obj.shareId!=''">
+            LEFT JOIN xc_share_folder_file as t2 ON t1.id=t2.folder_id
+        </if>
+        <where>
+            1=1
+            <if test="obj.diskId!=null and obj.diskId!=''">
+                and t1.disk_id = #{obj.diskId}
+            </if>
+            <if test="obj.name!=null and obj.name!=''">
+                and t1.name LIKE CONCAT('%', #{obj.name}, '%')
+            </if>
+            <if test="obj.parentNode!=null and obj.parentNode!=''">
+                and t1.parent_node = #{obj.parentNode}
+            </if>
+            <if test="obj.shareId!=null and obj.shareId!=''">
+                and t2.share_id =#{obj.shareId}
+            </if>
+            <if test="obj.isRoot!=null and obj.isRoot!=''">
+                and t2.is_root =#{obj.isRoot}
+            </if>
+        </where>
+        UNION ALL
+        SELECT
+        t3.id,
+        t3.name,
+        t3.disk_id,
+        "0" as is_file,
+        null as node,
+        null as parent_node,
+        t3.size,
+        t3.folder_id,
+        t3.hash_id,
+        t3.status,
+        t3.create_time,
+        t3.update_time
+        FROM xc_file as t3
+        <if test="obj.shareId!=null and obj.shareId!=''">
+            LEFT JOIN xc_share_folder_file as t4 ON t3.id=t4.file_id
+        </if>
+        <where>
+            t3.status='0'
+            <if test="obj.diskId!=null and obj.diskId!=''">
+                and t3.disk_id = #{obj.diskId}
+            </if>
+            <if test="obj.name!=null and obj.name!=''">
+                and t3.name LIKE CONCAT('%', #{obj.name}, '%')
+            </if>
+            <if test="obj.folderId!=null and obj.folderId!=''">
+                and t3.folder_id = #{obj.folderId}
+            </if>
+            <if test="obj.shareId!=null and obj.shareId!=''">
+                and t4.share_id =#{obj.shareId}
+            </if>
+            <if test="obj.isRoot!=null and obj.isRoot!=''">
+                and t4.is_root =#{obj.isRoot}
+            </if>
+        </where>)
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

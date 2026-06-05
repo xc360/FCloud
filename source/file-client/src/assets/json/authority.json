@@ -1,0 +1,212 @@
+[
+  {
+    "id": "1",
+    "name": "网盘管理",
+    "code": "home_fileManage",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-01 18:46:39",
+    "updateTime": "2020-04-26 18:03:30"
+  },
+  {
+    "id": "10",
+    "name": "基础管理",
+    "code": "home_basicManage",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-10 18:46:39",
+    "updateTime": "2020-04-26 18:03:30"
+  },
+  {
+    "id": "11",
+    "name": "系统字典",
+    "code": "home_basicManage_systemDict",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-11 18:46:39",
+    "updateTime": "2020-04-26 18:03:30"
+  },
+  {
+    "id": "12",
+    "name": "区域字典",
+    "code": "home_basicManage_areaDict",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-12 18:46:39",
+    "updateTime": "2020-04-26 18:03:30"
+  },
+  {
+    "id": "13",
+    "name": "菜单",
+    "code": "home_basicManage_menu",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-13 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "14",
+    "name": "系统",
+    "code": "home_basicManage_system",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-14 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "15",
+    "name": "系统信息",
+    "code": "home_basicManage_systemInfo",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-15 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "16",
+    "name": "账户管理",
+    "code": "home_authorizeManage",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-16 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "17",
+    "name": "用户组",
+    "code": "home_authorizeManage_group",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-17 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "18",
+    "name": "用户",
+    "code": "home_authorizeManage_user",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-18 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "19",
+    "name": "角色",
+    "code": "home_authorizeManage_role",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-19 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "2",
+    "name": "云盘",
+    "code": "home_fileManage_file",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-02 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "20",
+    "name": "权限",
+    "code": "home_authorizeManage_authority",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-20 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "21",
+    "name": "应用程序",
+    "code": "home_authorizeManage_app",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-21 18:46:39",
+    "updateTime": "2020-04-26 18:03:31"
+  },
+  {
+    "id": "3",
+    "name": "共享文件",
+    "code": "home_fileManage_share",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-03 18:46:39",
+    "updateTime": "2020-04-26 18:03:32"
+  },
+  {
+    "id": "4",
+    "name": "安全链接",
+    "code": "home_fileManage_safetyChain",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-04 18:46:39",
+    "updateTime": "2020-04-26 18:03:33"
+  },
+  {
+    "id": "5",
+    "name": "文章管理",
+    "code": "home_articleManage",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-05 18:46:39",
+    "updateTime": "2020-04-26 18:03:34"
+  },
+  {
+    "id": "6",
+    "name": "评论",
+    "code": "home_articleManage_comment",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-06 18:46:39",
+    "updateTime": "2020-04-26 18:03:34"
+  },
+  {
+    "id": "7",
+    "name": "分类",
+    "code": "home_articleManage_category",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-07 18:46:39",
+    "updateTime": "2020-04-26 18:03:34"
+  },
+  {
+    "id": "8",
+    "name": "文章",
+    "code": "home_articleManage_article",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-08 18:46:39",
+    "updateTime": "2020-04-26 18:03:34"
+  },
+  {
+    "id": "9",
+    "name": "标签",
+    "code": "home_articleManage_tag",
+    "type": "menu",
+    "systemCode": "xcAdmin",
+    "status": "0",
+    "createTime": "2020-04-09 18:46:39",
+    "updateTime": "2020-04-26 18:03:34"
+  }
+]

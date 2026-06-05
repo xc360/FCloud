@@ -1,0 +1,306 @@
+[
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskFileCdnUrl"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateDiskFile"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "deleteDiskFile"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskFolderFilePack"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateDiskFolderFile"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskFolderFilePage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskFolderFile"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "deleteDiskFolder"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateDiskFolder"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskFolder"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskFolderPage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskFolderSize"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskParentFolder"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getMyAppUser"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "deleteMyAppToken"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateMyAppUserPassword"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskSafetyChain"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskSafetyChainPage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateDiskSafetyChain"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "deleteDiskSafetyChain"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "deleteDiskShare"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskSharePage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskShare"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "diskUploadFile"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDisk"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_UPDATE_PASSWORD"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_LOG_OUT"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_QUERY_USER_INFO"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_SHARE_DELETE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_SHARE_DETAILS"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_SAFETY_CHAIN_ADD"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_SAFETY_CHAIN_DELETE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_SAFETY_CHAIN_EDIT"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_ADD"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_UPLOAD"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_MUSIC_PLAY"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_SHARE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_COPY"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_MOVE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_PACK"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_EDIT"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FILE_DOWNLOAD"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FILE_CDN"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_FOLDER_FILE_DELETE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "home_diskManage_fileManage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "home_diskManage_shareFileManage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "home_diskManage_safetyChainManage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateMyAppUserMail"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateMyAppUserPhone"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createMyAppUserCaptcha"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_UPDATE_USER_INFO"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_UPDATE_PHONE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_UPDATE_EMAIL"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDiskShareFolderFile"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getMyAppUserList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskParentFolderList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "home_diskManage_diskList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_DISK_EDIT"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_DISK_ADD"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_DISK_DELETE"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskPage"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createDisk"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateDisk"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "deleteDisk"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getMyAppUserGroupList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_SHOW_FREE_FLOW"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getBasicInfo"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getMyAppMenuList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getMyAppDictList"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getMyAppUserCaptcha"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "createMyAppCaptcha"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_DELETE_USER"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "B_DISK_QUERY_SECRET"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "getDiskSecret"
+  },
+  {
+    "roleCode": "super-admin",
+    "authorityCode": "updateDiskSecret"
+  }
+]

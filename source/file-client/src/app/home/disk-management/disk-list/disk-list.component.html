@@ -1,0 +1,24 @@
+<app-table-find [tableFindModel]="tableFindModel"></app-table-find>
+
+<!--  创建应用-->
+<nz-modal [(nzVisible)]="diskInfo.isVisible" nzTitle="应用管理"
+          (nzOnCancel)="diskInfo.isVisible = false"
+          (nzOnOk)="submitFun()" (nzAfterOpen)="formInfoComponent.focus('name')"
+          [nzOkDisabled]="formInfoModel.getDisabled()||appService.getLoading()">
+  <app-form-info [formInfoModel]="formInfoModel"></app-form-info>
+</nz-modal>
+<!--  应用秘钥-->
+<nz-modal [(nzVisible)]="secretInfo.isVisible" nzTitle="应用秘钥"
+          (nzOnCancel)="secretInfo.isVisible = false"
+          nzOkText="复制秘钥"
+          (nzOnOk)="secretInfo.isVisible = false;homeService.copy(secretInfo.diskSecret)">
+  <nz-form-control>
+    <span>磁盘编号：</span><a>{{secretInfo.diskNo}}</a>
+  </nz-form-control>
+  <nz-form-control>
+    <span>磁盘秘钥：</span><a>{{secretInfo.diskSecret}}</a>
+  </nz-form-control>
+  <nz-form-control>
+    <button nz-button nzType="primary" (click)="updateSecret(secretInfo)">更新秘钥</button>
+  </nz-form-control>
+</nz-modal>

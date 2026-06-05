@@ -1,0 +1,105 @@
+.share-file {
+  overflow-y: auto;
+  height: 100%;
+
+}
+
+.login-modal {
+  width: 100%;
+  height: 320px;
+  border-width: 0;
+  overflow-y: hidden;
+  background-color: #ffffff;
+}
+
+.select-folder-modal {
+  overflow-y: auto;
+  height: 320px;
+}
+
+
+//精彩电影推荐
+.footer {
+
+  .footer-head {
+    margin: 10px 0;
+  }
+
+  .footer-content {
+    overflow: auto;
+    animation: slide 20s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    @keyframes slide {
+      0% {
+        margin-left: 0;
+      }
+
+      50% {
+        margin-left: -50%;
+      }
+
+      100% {
+        margin-left: -100%;
+      }
+    }
+
+    .footer-content__play {
+      white-space: nowrap;
+      width: fit-content;
+    }
+  }
+
+  .footer-content::-webkit-scrollbar {
+    display: none
+  }
+}
+
+.recommend-element {
+  width: 240px;
+  height: 180px;
+  padding: 0 2px;
+}
+
+.select-folder-modal {
+  overflow-y: auto;
+  min-height: 320px;
+  max-height: 385px;
+}
+
+.video-play {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(50, 50, 50, 0.5);
+  text-align: center;
+  padding: 18vh 0;
+  z-index: 1000;
+
+  .video {
+    width: 980px;
+    display: inline-block
+  }
+}
+
+
+@media (max-width: 636px) {
+
+  .video-play {
+    padding: 36vh 0;
+
+    .video {
+      width: 330px;
+      display: inline-block
+    }
+  }
+
+  .recommend-element {
+    width: 150px;
+    height: 120px;
+  }
+
+}

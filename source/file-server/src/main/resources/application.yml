@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: file-server
+  profiles:
+    active: dev
+
+#日志配置
+logging:
+  config: classpath:logback-boot.xml
+  projectName: ${spring.application.name}

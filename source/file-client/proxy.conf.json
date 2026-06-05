@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": "https://file.ccxc.vip/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "auth": "LOGIN:PASS",
+    "pathRewrite": {
+      "^/api": "/"
+    }
+  }
+}

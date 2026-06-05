@@ -1,0 +1,16 @@
+<div class="share-all">
+  <app-table-find [tableFindModel]="tableFindModel"></app-table-find>
+  <!--  url地址-->
+  <nz-modal [(nzVisible)]="isUrlVisible"
+            nzTitle="下载地址"
+            (nzOnCancel)="isUrlVisible = false"
+            nzOkText="复制"
+            (nzOnOk)="isUrlVisible = false;copy(currentObj.shareUrl+(currentObj.drawCode?'提取码:'+currentObj.drawCode:''))">
+    <span>地址：</span><a>{{currentObj.shareUrl}}</a>
+    <br/>
+    <ng-container *ngIf="currentObj.drawCode">
+      <span>提取码：</span><a>{{currentObj.drawCode}}</a>
+    </ng-container>
+  </nz-modal>
+</div>
+

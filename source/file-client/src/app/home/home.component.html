@@ -1,0 +1,150 @@
+<div class="home-all">
+  <nz-layout class="layout">
+    <nz-header>
+      <div class="title">
+        <button nz-button nzType="primary" (click)="toggleCollapsed()">
+          <i nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+        </button>
+        <span (click)="jump('/home')">{{homeService.getAppInfoValue("appName")}}</span>
+      </div>
+      <div class="login">
+        <span class="userName">{{userInfo.account}}</span>
+        <div class="portrait" [nzTrigger]="'click'" nz-dropdown [nzDropdownMenu]="menu">
+          <nz-avatar nzSize="large" nzIcon="user" [ngClass]="'userImg'" [nzSrc]="userInfo.portrait"></nz-avatar>
+        </div>
+      </div>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li *ngIf="verifyButtonAuthority(BUTTON_CODE.b_query_user_info)" nz-menu-item
+              (click)="jumpPersonal('/home/personalInfo/details')">我的资料
+          </li>
+          <li *ngIf="verifyButtonAuthority(BUTTON_CODE.b_update_password)" nz-menu-item
+              (click)="isPassWordVisible = true">{{userInfo['passwordExist'] ? "修改密码" : "设置密码"}}
+          </li>
+          <li nz-menu-item (click)="logOut()">退出登录
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </nz-header>
+    <nz-layout>
+      <nz-sider
+        nzCollapsible
+        [(nzCollapsed)]="isCollapsed"
+        [nzBreakpoint]="'lg'"
+        [nzCollapsedWidth]="0"
+        [nzTrigger]="null">
+        <div class="app-select" [ngStyle]="{display:diskList.length>1?'block':'none'}">
+          <app-overall-select [openLabel]="false" [labelName]="'磁盘'"
+                              (onSelected)="initBasicData($event)"></app-overall-select>
+        </div>
+        <ul class="menu" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed"
+            [nzTheme]="'dark'">
+          <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menus }"></ng-container>
+          <ng-template #menuTpl let-menus>
+            <ng-container *ngFor="let menu of menus">
+              <li
+                *ngIf="!menu.children"
+                nz-menu-item
+                [nzDisabled]="menu.disabled"
+                [nzSelected]="menu.selected"
+                (click)="jump(menu.url)"
+              >
+                <i nz-icon [nzType]="menu.icon" *ngIf="menu.icon"></i>
+                <span>{{ menu.title }}</span>
+              </li>
+              <li
+                *ngIf="menu.children"
+                nz-submenu
+                [nzOpen]="menu.open"
+                [nzTitle]="menu.title"
+                [nzIcon]="menu.icon?menu.icon:null"
+                [nzDisabled]="menu.disabled"
+              >
+                <ul>
+                  <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menu.children}"></ng-container>
+                </ul>
+              </li>
+            </ng-container>
+          </ng-template>
+        </ul>
+      </nz-sider>
+      <div [class]="isCollapsed?'inner-content':'inner-content1'">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-layout>
+  </nz-layout>
+</div>
+<!--  修改密码-->
+<nz-modal [(nzVisible)]="isPassWordVisible"
+          [nzTitle]="userInfo['passwordExist'] ? '修改密码' : '设置密码'"
+          (nzOnCancel)="modifyPassWordCancel()"
+          (nzOnOk)="modifyPassWordOk(passwordInfo)"
+          [nzOkDisabled]="!(passwordInfo.newPassword.trim().length>=6&&passwordInfo.newPassword===passwordInfo.againPassword&&!appService.getLoading()&&(userInfo['passwordExist'] ?!!passwordInfo.password:true))">
+  <div class="input-block" *ngIf="userInfo['passwordExist']">
+    <span class="required">原密码：</span>
+    <div>
+      <nz-input-group [nzSuffix]="password">
+        <input [type]="passwordConfig.password ? 'text' : 'password'"
+               nz-input
+               [maxLength]="24"
+               placeholder="原密码" [(ngModel)]="passwordInfo.password"/>
+      </nz-input-group>
+      <ng-template #password>
+        <i nz-icon [nzType]="passwordConfig.password ? 'eye-invisible' : 'eye'"
+           (click)="passwordConfig.password = !passwordConfig.password"></i>
+      </ng-template>
+    </div>
+  </div>
+  <div class="input-block">
+    <span class="required">新密码：</span>
+    <div>
+      <nz-input-group [nzSuffix]="newPassword">
+        <input
+          [type]="passwordConfig.newPassword ? 'text' : 'password'"
+          nz-input
+          placeholder="请输入新密码"
+          [maxLength]="24"
+          [(ngModel)]="passwordInfo.newPassword" (change)="passwordConfig.passwordType='1'"/>
+      </nz-input-group>
+      <ng-template #newPassword>
+        <i nz-icon [nzType]="passwordConfig.newPassword ? 'eye-invisible' : 'eye'"
+           (click)="passwordConfig.newPassword = !passwordConfig.newPassword"></i>
+      </ng-template>
+      <ng-container
+        *ngIf="passwordInfo.newPassword.trim().length>0&&passwordInfo.newPassword.trim().length<6">
+        <span class="red">新密码必须大于或等于6位!</span>
+      </ng-container>
+      <ng-container
+        *ngIf="passwordInfo.againPassword.trim().length>0&&
+          passwordConfig.passwordType==='2'&&
+          passwordInfo.newPassword!==passwordInfo.againPassword">
+        <span class="red">你输入的确认密码不一致！</span>
+      </ng-container>
+    </div>
+  </div>
+  <div class="input-block">
+    <span class="required">确认密码：</span>
+    <div>
+      <nz-input-group [nzSuffix]="againPassword">
+        <input
+          [type]="passwordConfig.againPassword ? 'text' : 'password'"
+          nz-input
+          placeholder="请输入"
+          [maxLength]="24"
+          (change)="passwordConfig.passwordType='2'"
+          [(ngModel)]="passwordInfo.againPassword"/>
+      </nz-input-group>
+      <ng-template #againPassword>
+        <i nz-icon [nzType]="passwordConfig.againPassword ? 'eye-invisible' : 'eye'"
+           (click)="passwordConfig.againPassword = !passwordConfig.againPassword"></i>
+      </ng-template>
+      <ng-container
+        *ngIf="passwordInfo.newPassword.trim().length>0&&
+          passwordConfig.passwordType==='1'&&
+          passwordInfo.newPassword!==passwordInfo.againPassword">
+        <span class="red">你输入的确认密码不一致！</span>
+      </ng-container>
+    </div>
+  </div>
+</nz-modal>
+<nz-back-top></nz-back-top>

@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 1580957 */
+  src: url('src/assets/icon/iconfont.woff2?t=1634724780028') format('woff2'),
+       url('src/assets/icon/iconfont.woff?t=1634724780028') format('woff'),
+       url('src/assets/icon/iconfont.ttf?t=1634724780028') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mp:before {
+  content: "\e663";
+}
+
+.icon-MPtubiao:before {
+  content: "\e649";
+}
+
+.icon-wenjian:before {
+  content: "\e790";
+}
+
+.icon-wenjianjia:before {
+  content: "\e80c";
+}
+
+.icon-danquxunhuan1:before {
+  content: "\e620";
+}
+
+.icon-danquxunhuan:before {
+  content: "\e66d";
+}
+
+.icon-mute:before {
+  content: "\e666";
+}
+
+.icon-voice:before {
+  content: "\e623";
+}
+
+.icon-random:before {
+  content: "\e737";
+}
+

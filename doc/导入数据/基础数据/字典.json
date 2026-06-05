@@ -1,0 +1,128 @@
+[
+  {
+    "name": "/download_files/1207608820172365825.png",
+    "value": "/download_files/1207608820000399361.mp4",
+    "type": "recommendMovie",
+    "seq": 0,
+    "status": "1"
+  },
+  {
+    "name": "/download_files/1207608820595990530.png",
+    "value": "/download_files/1207608820344332290.mp4",
+    "type": "recommendMovie",
+    "seq": 0,
+    "status": "1"
+  },
+  {
+    "name": "/download_files/1207608820897980418.png",
+    "value": "/download_files/1207608820734402562.mp4",
+    "type": "recommendMovie",
+    "seq": 0,
+    "status": "1"
+  },
+  {
+    "name": "/download_files/1207608821350965250.png",
+    "value": "/download_files/1207608821170610178.mp4",
+    "type": "recommendMovie",
+    "seq": 0,
+    "status": "1"
+  },
+  {
+    "name": "/download_files/1207608821506154497.png",
+    "value": "/download_files/1207608821963333633.mp4",
+    "type": "recommendMovie",
+    "seq": 0,
+    "status": "1"
+  },
+  {
+    "name": "/download_files/1207608821652955138.png",
+    "value": "/download_files/1207608821799755777.mp4",
+    "type": "recommendMovie",
+    "seq": 0,
+    "status": "1"
+  },
+  {
+    "name": "disk_icon_file",
+    "value": "./assets/images/fileIcon/file.png",
+    "type": "fileIcon",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "disk_icon_folder",
+    "value": "./assets/images/fileIcon/folder.png",
+    "type": "fileIcon",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "disk_file_icon_mp4",
+    "value": "./assets/images/fileIcon/mp4.png",
+    "type": "fileIcon",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "disk_file_icon_mp3",
+    "value": "./assets/images/fileIcon/mp3.png",
+    "type": "fileIcon",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "男",
+    "value": "1",
+    "type": "sex",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "女",
+    "value": "0",
+    "type": "sex",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "是",
+    "value": "0",
+    "type": "whether",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "否",
+    "value": "1",
+    "type": "whether",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "正常",
+    "value": "0",
+    "type": "userStatus",
+    "seq": 5,
+    "status": "0"
+  },
+  {
+    "name": "锁定",
+    "value": "1",
+    "type": "userStatus",
+    "seq": 6,
+    "status": "0"
+  },
+  {
+    "name": "有效",
+    "value": "0",
+    "type": "effectStatus",
+    "seq": 0,
+    "status": "0"
+  },
+  {
+    "name": "无效",
+    "value": "1",
+    "type": "effectStatus",
+    "seq": 0,
+    "status": "0"
+  }
+]

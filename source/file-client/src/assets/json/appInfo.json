@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "description": "版本",
+    "systemCode": "xcAdmin",
+    "code": "system_version",
+    "value": "1.0.0",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  },
+  {
+    "id": "1",
+    "description": "邮箱",
+    "systemCode": "xcAdmin",
+    "code": "contact_mailbox",
+    "value": "925988564@qq.com",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  },
+  {
+    "id": "1",
+    "description": "邮箱地址",
+    "systemCode": "xcAdmin",
+    "code": "contact_mailbox_url",
+    "value": "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=dk9EQ09OTkNAQjYHB1gVGRs",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  },
+  {
+    "id": "1",
+    "description": "file图片",
+    "systemCode": "xcAdmin",
+    "code": "disk_icon_file",
+    "value": "./assets/images/fileIcon/file.png",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  },
+  {
+    "id": "1",
+    "description": "folder图片",
+    "systemCode": "xcAdmin",
+    "code": "disk_icon_folder",
+    "value": "./assets/images/fileIcon/folder.png",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  },
+  {
+    "id": "1",
+    "description": "mp4图片",
+    "systemCode": "xcAdmin",
+    "code": "disk_file_icon_mp4",
+    "value": "./assets/images/fileIcon/mp4.png",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  },
+  {
+    "id": "1",
+    "description": "mp3音乐",
+    "systemCode": "xcAdmin",
+    "code": "disk_file_icon_mp3",
+    "value": "./assets/images/fileIcon/mp3.png",
+    "status": "0",
+    "createTime": "2020-04-02 14:00:38",
+    "updateTime,": "2020-04-02 14:00:38"
+  }
+]
